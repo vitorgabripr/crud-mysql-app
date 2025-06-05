@@ -47,22 +47,6 @@ A aplicação estará disponível em:
 ```bash
 http://localhost:3000
 ```
-📂 Estrutura do Projeto
-
-```pgsql
-Edit
-CRUD/
-├── src/
-│   ├── controllers/
-│   ├── routes/
-│   ├── services/
-│   ├── models/ (futuro)
-│   └── index.ts
-├── Dockerfile
-├── package.json
-├── tsconfig.json
-└── README.md
-```
 🔥 Funcionalidades
 ✅ Criar registros
 
