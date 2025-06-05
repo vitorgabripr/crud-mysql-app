@@ -29,18 +29,15 @@ Atualmente funciona com dados em memória. Banco de dados será implementado em 
 
 ```bash
 git clone https://github.com/vitorgabripr/CRUD.git
-Acesse o diretório:
-
-bash
-Copy
-Edit
+```
+2. Acesse o diretório:
+```bash
 cd CRUD
-Construa a imagem:
-
-bash
-Copy
-Edit
-docker build -t crud-app .
+```
+3. Construa a imagem:
+```bash
+docker build -t crud-app
+```
 Rode o container:
 
 bash
