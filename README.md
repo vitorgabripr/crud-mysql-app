@@ -40,19 +40,16 @@ docker build -t crud-app
 ```
 Rode o container:
 
-bash
-Copy
-Edit
+```bash
 docker run -p 3000:3000 crud-app
+```
 A aplicação estará disponível em:
-
-arduino
-Copy
-Edit
+```bash
 http://localhost:3000
+```
 📂 Estrutura do Projeto
-pgsql
-Copy
+
+```pgsql
 Edit
 CRUD/
 ├── src/
@@ -65,6 +62,7 @@ CRUD/
 ├── package.json
 ├── tsconfig.json
 └── README.md
+```
 🔥 Funcionalidades
 ✅ Criar registros
 
