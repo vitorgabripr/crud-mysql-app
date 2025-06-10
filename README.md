@@ -1,6 +1,6 @@
 # CRUD ⚙️
 
-CRUD simples desenvolvido com **Node.js**, **TypeScript** e **JavaScript**, utilizando **Docker** para o ambiente de execução.
+CRUD desenvolvido com **Node.js**, **TypeScript** e **JavaScript**, utilizando **Docker** para o ambiente de execução.
 
 Atualmente funciona com dados em memória. Banco de dados será implementado em breve.
 
@@ -59,7 +59,7 @@ http://localhost:3000
 ❌ Banco de dados (em desenvolvimento)
 
 📌 Próximos passos
-🔗 Integração com banco de dados (PostgreSQL, MongoDB ou outro)
+🔗 Integração com banco de dados (PostgreSQL)
 
 🛠️ Validações
 
