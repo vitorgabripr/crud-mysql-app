@@ -59,7 +59,7 @@ http://localhost:3000
 ❌ Banco de dados (em desenvolvimento)
 
 📌 Próximos passos
-🔗 Integração com banco de dados (PostgreSQL, MongoDB ou outro)
+🔗 Integração com banco de dados (PostgreSQL)
 
 🛠️ Validações
 
