@@ -1,4 +1,4 @@
-import {Body, Controller, Get, Header, Post, Redirect} from "@nestjs/common";
+import {Body, Controller,Param, Get, Header, NotFoundException, Post, Redirect, Put, Delete} from "@nestjs/common";
 import {HttpCode} from "@nestjs/common";
 import { CreateUserDto } from "src/dto/create.user.dto";
 
@@ -25,14 +25,46 @@ export class CatsController {
         return newUser; //return created user
     }
 
+    //metodo para  atualizar user
+    @Put(':id') 
+    updateUser(@Param('id') id: string, @Body() CreateUserDto: CreateUserDto): CreateUser | string {
+        const userIndex = users.findIndex(user => user.id === parseInt(id));
+        if (userIndex === -1) {
+            throw new NotFoundException(`User with id ${id} not found`);
+        }
+        const updatedUser = { ...users[userIndex], ...CreateUserDto, id: parseInt(id) };
+        users[userIndex] = updatedUser;
+        console.log("User updated:", updatedUser);
+        return updatedUser; //retorna user atualizado
+    }
+
     @Get() //get all users
     findAllUsers(): CreateUser[] {
         return users; //return all users
     }
 
-    // Your existing CatsController methods would go into CatsController
-    // If you rename CatsController to UsersController, make sure to adjust
-    // other methods or separate concerns into different controllers.   
+    @Get(':id') //get user by id
+    findUserById(@Param('id') id: string): CreateUser | string {
+        const user = users.find(user=> user.id === parseInt(id));
+        if (!user) {
+            throw new NotFoundException(`User with id ${id} not found`);
+        }
+        return user; //return user if found
+    }
+
+    //metodo para apagar user pelo seu id
+    @Delete(':id')
+    @HttpCode(204) //retorna 204 pra falar que foi apagado com sucesso
+    deleteUser(@Param('id') id: string): void {
+        const lenghtInitial = users.length;
+        users = users.filter(user => user.id !== parseInt(id));
+
+        if(users.length === lenghtInitial) {
+            throw new NotFoundException(`User with id ${id} not found`);
+        }
+        console.log(`User with id ${id} deleted`);
+    }
+ 
     @Get('abcd/*') 
     @Redirect('http://localhost:3000/', 301)
     findAll(): string {
@@ -43,3 +75,22 @@ export class CatsController {
 //@Post()vai lidar com uma requisicao.
 //'Cache-Control', 'no-store'. isso n armazena resposta em cache na req POST
 //@HttpCode(204), apenas retorna Sucesso, NAO RETORNA DADOS
+
+// futuramente botar isso: 
+// // Em src/controller/cats.controller.ts
+// // ...
+// @Get('search') // Exemplo de busca com query parameters
+// findFilteredUsers(@Query('name') name?: string, @Query('age') age?: string): CreateUser[] {
+//     let filteredUsers = users;
+
+//     if (name) {
+//         filteredUsers = filteredUsers.filter(user => user.name.includes(name));
+//     }
+
+//     if (age) {
+//         filteredUsers = filteredUsers.filter(user => user.age === parseInt(age));
+//     }
+
+//     return filteredUsers;
+// } isso serve pra filtrar usuarios por nome ou idade
+// // ...
