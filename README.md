@@ -1,6 +1,6 @@
 # CRUD ⚙️
 
-CRUD simples desenvolvido com **Node.js**, **TypeScript** e **JavaScript**, utilizando **Docker** para o ambiente de execução.
+CRUD desenvolvido com **Node.js**, **TypeScript** e **JavaScript**, utilizando **Docker** para o ambiente de execução.
 
 Atualmente funciona com dados em memória. Banco de dados será implementado em breve.
 
