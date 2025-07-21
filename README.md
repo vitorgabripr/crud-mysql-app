@@ -12,6 +12,8 @@ Atualmente funciona com dados em memória. Banco de dados será implementado em 
 - TypeScript
 - JavaScript
 - Docker
+- JWS
+- MySQL
 
 ---
 
@@ -62,10 +64,14 @@ http://localhost:3000
 
 ✅ Deletar registros
 
+❌ Authenticação (em desenvolvimento)
+
 ❌ Banco de dados (em desenvolvimento)
 
 📌 Próximos passos
 🔗 Integração com banco de dados (MySQL ou MongoDB)
+
+💻 Authenticação
 
 🛠️ Validações
 
