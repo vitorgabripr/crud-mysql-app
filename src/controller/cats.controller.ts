@@ -3,7 +3,6 @@ import {
   Controller,
   Param,
   Get,
-  Header,
   NotFoundException,
   Post,
   Redirect,
@@ -28,7 +27,7 @@ let nextId = 1; //simple id generator
 export class CatsController {
   @Post()
   //@Header('Cache-Control', 'no-store')
-  @HttpCode(201) // i using 201 for successful resource creation
+  @HttpCode(201) // I'm using 201 for successful resource creation
   create(@Body() CreateUserDto: CreateUserDto): CreateUser {
     const newUser = { id: nextId++, ...CreateUserDto };
     users.push(newUser);
@@ -70,7 +69,7 @@ export class CatsController {
     return user; //return user if found
   }
 
-  //metodo para apagar user pelo seu id
+  //method for delete user with id
   @Delete(":id")
   @HttpCode(204) //retorna 204 pra falar que foi apagado com sucesso
   deleteUser(@Param("id") id: string): void {

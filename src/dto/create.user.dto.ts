@@ -15,5 +15,5 @@ export class CreateUserDto {
     this.age = age;
   }
 }
-// i'll use this DTO in the controller
+// I'll use this DTO in the controller
 // this is a simple DTO for creating a user
