@@ -4,8 +4,6 @@ CRUD desenvolvido com **Node.js**, **TypeScript** e **JavaScript**, utilizando *
 
 Atualmente funciona com dados em memória. Banco de dados será implementado em breve.
 
-> 🔗 Repositório: [github.com/vitorgabripr/CRUD](https://github.com/vitorgabripr/CRUD)
-
 ---
 
 ## 🚀 Tecnologias
@@ -67,7 +65,7 @@ http://localhost:3000
 ❌ Banco de dados (em desenvolvimento)
 
 📌 Próximos passos
-🔗 Integração com banco de dados (PostgreSQL)
+🔗 Integração com banco de dados (MySQL ou MongoDB)
 
 🛠️ Validações
 
